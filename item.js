@@ -136,6 +136,7 @@ Item.prototype.css = function( style ) {
   for ( var prop in style ) {
     // use vendor property if available
     var supportedProp = vendorProperties[ prop ] || prop;
+    elemStyle.setProperty(supportedProp, style[ prop ], 'important');
     elemStyle[ supportedProp ] = style[ prop ];
   }
 };
